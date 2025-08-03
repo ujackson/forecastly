@@ -79,6 +79,8 @@ jobs:
         env:
           RAILS_ENV: test
           OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+          GEOCODER_KEY: ${{ secrets.GEOCODER_KEY }}
           # REDIS_URL: redis://localhost:6379/0
         run: bin/rails test test:system
 
