@@ -10,6 +10,9 @@ servers:
     hosts:
       - 137.184.215.0
     proxy: false
+    options:
+      publish:
+        - "80:3000"
   # job:
   #   hosts:
   #     - 137.184.215.0
