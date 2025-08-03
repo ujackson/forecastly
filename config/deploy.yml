@@ -7,10 +7,10 @@ image: ujackson/forecastly
 # Deploy to these servers.
 servers:
   web:
-    - 192.168.0.1
+    - 137.184.215.0
   # job:
   #   hosts:
-  #     - 192.168.0.1
+  #     - 137.184.215.0
   #   cmd: bin/jobs
 
 # Enable SSL auto certification via Let's Encrypt and allow for multiple apps on a single web server.
