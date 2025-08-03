@@ -1,6 +1,14 @@
 ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"
 require "rails/test_help"
+require "webmock/minitest"
+require "mocha/minitest"
+
+# Enable WebMock
+WebMock.disable_net_connect!(allow_localhost: true)
+
+# Load support files
+Dir[Rails.root.join("test", "support", "**", "*.rb")].each { |f| require f }
 
 module ActiveSupport
   class TestCase

@@ -1,0 +1,14 @@
+<div class="rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 p-6 text-white">
+  <h2 class="text-xl font-semibold mb-4">Hourly Forecast</h2>
+  <div class="flex gap-4 overflow-x-auto pb-2" id="hourlyForecast">
+    <% @forecast.first(9).each do |hour| %>
+      <div class="flex-shrink-0 text-center">
+        <div class="rounded-2xl bg-white/10 p-4 min-w-[80px]">
+          <div class="text-sm text-blue-200 mb-2"><%= Time.zone.at(hour[:dt]).strftime("%-l %p") %></div>
+          <div class="text-blue-200 mx-auto mb-2 text-3xl"><%= weather_emoji_for(hour[:weather][0][:icon]) %></div>
+          <div class="font-semibold"><%= hour[:temp].round %>°</div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

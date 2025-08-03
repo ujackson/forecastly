@@ -1,0 +1,8 @@
+--- "<div class=\"rounded-3xl bg-white/10 backdrop-blur-md border border-white/20
+  p-6 text-white\">\n  <h2 class=\"text-xl font-semibold mb-4\">Hourly Forecast</h2>\n
+  \ <div class=\"flex gap-4 overflow-x-auto pb-2\" id=\"hourlyForecast\">\n      <div
+  class=\"flex-shrink-0 text-center\">\n        <div class=\"rounded-2xl bg-white/10
+  p-4 min-w-[80px]\">\n          <div class=\"text-sm text-blue-200 mb-2\">11 AM</div>\n
+  \         <div class=\"text-blue-200 mx-auto mb-2 text-3xl\">\U0001F325️</div>\n
+  \         <div class=\"font-semibold\">292°</div>\n        </div>\n      </div>\n
+  \ </div>\n</div>"

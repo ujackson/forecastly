@@ -1,0 +1,12 @@
+--- "<div class=\"rounded-3xl bg-white/10 backdrop-blur-md border border-white/20
+  p-6 text-white\">\n  <h2 class=\"text-xl font-semibold mb-4\">7-Day Forecast</h2>\n
+  \ <div class=\"space-y-3\" id=\"weeklyForecast\">\n      <div class=\"flex items-center
+  justify-between p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors\">\n
+  \       <div class=\"flex items-center gap-4 flex-1\">\n          <div class=\"w-16
+  text-left font-medium\">Wednesday</div>\n          <div class=\"text-blue-200 text-3xl\">\U0001F326️</div>\n
+  \         <div class=\"text-blue-200 flex-1\">Light Rain</div>\n        </div>\n
+  \       <div class=\"flex items-center gap-4\">\n          <span class=\"text-blue-200\">291°</span>\n
+  \         <div class=\"w-20 h-2 bg-white/20 rounded-full overflow-hidden\">\n            <div
+  class=\"h-full bg-gradient-to-r from-blue-300 to-orange-300 rounded-full\" style=\"width:
+  86%\"></div>\n          </div>\n          <span class=\"font-semibold w-8 text-right\">300°</span>\n
+  \       </div>\n      </div>\n  </div>\n</div>"

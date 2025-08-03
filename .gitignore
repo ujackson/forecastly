@@ -8,7 +8,7 @@
 /.bundle
 
 # Ignore all environment files.
-/.env*
+/.env
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -35,3 +35,7 @@
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
+
+/.idea
+
+**/.DS_Store

@@ -1,0 +1,99 @@
+--- "<turbo-stream action=\"update\" target=\"forecast\"><template>\n<div class=\"text-center
+  text-white space-y-4\" data-controller=\"components--address--autocomplete\">\n
+  \ <div class=\"relative max-w-md mx-auto\">\n    <div class=\"relative\">\n      <svg
+  xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24
+  24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"
+  stroke-linejoin=\"round\" class=\"absolute left-4 top-1/2 transform -translate-y-1/2
+  h-5 w-5 text-white\">\n        <circle cx=\"11\" cy=\"11\" r=\"8\"/>\n        <path
+  d=\"m21 21-4.35-4.35\"/>\n      </svg>\n      <input\n        value=\"New York\"\n
+  \       data-components--address--autocomplete-target=\"searchInput\"\n        id=\"search\"\n
+  \       type=\"text\"\n        placeholder=\"Search for a city...\"\n        class=\"w-full
+  pl-12 pr-12 py-3 rounded-2xl bg-white/20 border border-white/30 text-white placeholder-white/70
+  focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/50\"\n        />\n
+  \     <button\n        data-components--address--autocomplete-target=\"clearButton\"\n
+  \       class=\"absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400
+  hover:text-white transition-colors hidden\"\n      >\n        <svg xmlns=\"http://www.w3.org/2000/svg\"
+  width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\"
+  stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"h-5
+  w-5 text-white\">\n          <path d=\"M18 6 6 18\"/>\n          <path d=\"m6 6
+  12 12\"/>\n        </svg>\n      </button>\n    </div>\n\n    <!-- Suggestions Dropdown
+  -->\n    <div data-components--address--autocomplete-target=\"suggestionsDropdown\"
+  class=\"absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-xl border
+  border-gray-200 overflow-hidden z-50 hidden\">\n    </div>\n  </div>\n</div>\n\n\n<div
+  id=\"flash\"></div>\n<div class=\"rounded-3xl bg-white/10 backdrop-blur-md border
+  border-white/20 p-8 text-white\">\n  <div class=\"flex items-center justify-between
+  mb-6\">\n    <div class=\"flex items-center gap-2\">\n      <svg xmlns=\"http://www.w3.org/2000/svg\"
+  width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\"
+  stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"h-5
+  w-5 text-blue-200\">\n        <path d=\"M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1
+  16 0Z\"/>\n        <circle cx=\"12\" cy=\"10\" r=\"3\"/>\n      </svg>\n      <span
+  class=\"text-lg font-medium\" id=\"currentLocation\">New York, NY</span>\n    </div>\n
+  \   <div class=\"flex items-center gap-2 text-blue-200\">\n      <svg xmlns=\"http://www.w3.org/2000/svg\"
+  width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\"
+  stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"h-4
+  w-4\">\n        <path d=\"M8 2v4\"/>\n        <path d=\"M16 2v4\"/>\n        <rect
+  width=\"18\" height=\"18\" x=\"3\" y=\"4\" rx=\"2\"/>\n        <path d=\"M3 10h18\"/>\n
+  \     </svg>\n      <span class=\"text-sm\" id=\"currentDate\">Wednesday, May 24</span>\n
+  \   </div>\n  </div>\n\n  <div class=\"grid grid-cols-1 lg:grid-cols-2 gap-8\">\n
+  \   <!-- Main Temperature -->\n    <div class=\"text-center lg:text-left\">\n      <div
+  class=\"flex items-center justify-center lg:justify-start gap-4 mb-4\">\n        <svg
+  xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24
+  24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"
+  stroke-linejoin=\"round\" class=\"h-16 w-16 text-blue-200\">\n          <path d=\"M17.5
+  19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z\"/>\n        </svg>\n        <div>\n
+  \         <div class=\"text-6xl font-light\" id=\"mainTemperature\">293°</div>\n
+  \         <div class=\"text-xl text-blue-200\" id=\"mainCondition\">Broken Clouds</div>\n
+  \       </div>\n      </div>\n      <div class=\"text-blue-200\" id=\"feelsLike\">Feels
+  like 293°F</div>\n      <div class=\"text-blue-200 mt-2\">\n        <span class=\"font-semibold\"
+  id=\"highTemp\">H: 300°</span>\n        <span class=\"mx-2\">•</span>\n        <span
+  class=\"font-semibold\" id=\"lowTemp\">L: 291°</span>\n      </div>\n    </div>\n\n
+  \   <!-- Weather Details -->\n    <div class=\"grid grid-cols-2 gap-4\">\n      <div
+  class=\"rounded-2xl bg-white/10 p-4 text-center\">\n        <svg xmlns=\"http://www.w3.org/2000/svg\"
+  width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\"
+  stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"h-6
+  w-6 text-blue-200 mx-auto mb-2\">\n          <path d=\"M7 16.3c2.2 0 4-1.83 4-4.05
+  0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3
+  12.25c0 2.22 1.8 4.05 4 4.05z\"/>\n          <path d=\"M12.56 6.6A10.97 10.97 0
+  0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97\"/>\n        </svg>\n
+  \       <div class=\"text-2xl font-semibold\" id=\"humidity\">89%</div>\n        <div
+  class=\"text-sm text-blue-200\">Humidity</div>\n      </div>\n      <div class=\"rounded-2xl
+  bg-white/10 p-4 text-center\">\n        <svg xmlns=\"http://www.w3.org/2000/svg\"
+  width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\"
+  stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"h-6
+  w-6 text-blue-200 mx-auto mb-2\">\n          <path d=\"M9.59 4.59A2 2 0 1 1 11 8H2m10.59
+  11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2\"/>\n        </svg>\n
+  \       <div class=\"text-2xl font-semibold\" id=\"windSpeed\">3</div>\n        <div
+  class=\"text-sm text-blue-200\">mph</div>\n      </div>\n      <div class=\"rounded-2xl
+  bg-white/10 p-4 text-center\">\n        <svg xmlns=\"http://www.w3.org/2000/svg\"
+  width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\"
+  stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"h-6
+  w-6 text-blue-200 mx-auto mb-2\">\n          <path d=\"M2 12s3-7 10-7 10 7 10 7-3
+  7-10 7-10-7-10-7Z\"/>\n          <circle cx=\"12\" cy=\"12\" r=\"3\"/>\n        </svg>\n
+  \       <div class=\"text-2xl font-semibold\" id=\"visibility\">6</div>\n        <div
+  class=\"text-sm text-blue-200\">miles</div>\n      </div>\n      <div class=\"rounded-2xl
+  bg-white/10 p-4 text-center\">\n        <svg xmlns=\"http://www.w3.org/2000/svg\"
+  width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\"
+  stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"h-6
+  w-6 text-blue-200 mx-auto mb-2\">\n          <path d=\"M14 4v10.54a4 4 0 1 1-4 0V4a2
+  2 0 0 1 4 0Z\"/>\n        </svg>\n        <div class=\"text-2xl font-semibold\"
+  id=\"uvIndex\">0</div>\n        <div class=\"text-sm text-blue-200\">UV Index</div>\n
+  \     </div>\n    </div>\n  </div>\n</div>\n<div class=\"rounded-3xl bg-white/10
+  backdrop-blur-md border border-white/20 p-6 text-white\">\n  <h2 class=\"text-xl
+  font-semibold mb-4\">Hourly Forecast</h2>\n  <div class=\"flex gap-4 overflow-x-auto
+  pb-2\" id=\"hourlyForecast\">\n      <div class=\"flex-shrink-0 text-center\">\n
+  \       <div class=\"rounded-2xl bg-white/10 p-4 min-w-[80px]\">\n          <div
+  class=\"text-sm text-blue-200 mb-2\">7 AM</div>\n          <div class=\"text-blue-200
+  mx-auto mb-2 text-3xl\">\U0001F325️</div>\n          <div class=\"font-semibold\">292°</div>\n
+  \       </div>\n      </div>\n  </div>\n</div>\n<div class=\"rounded-3xl bg-white/10
+  backdrop-blur-md border border-white/20 p-6 text-white\">\n  <h2 class=\"text-xl
+  font-semibold mb-4\">7-Day Forecast</h2>\n  <div class=\"space-y-3\" id=\"weeklyForecast\">\n
+  \     <div class=\"flex items-center justify-between p-4 rounded-2xl bg-white/5
+  hover:bg-white/10 transition-colors\">\n        <div class=\"flex items-center gap-4
+  flex-1\">\n          <div class=\"w-16 text-left font-medium\">Wednesday</div>\n
+  \         <div class=\"text-blue-200 text-3xl\">\U0001F326️</div>\n          <div
+  class=\"text-blue-200 flex-1\">Light Rain</div>\n        </div>\n        <div class=\"flex
+  items-center gap-4\">\n          <span class=\"text-blue-200\">291°</span>\n          <div
+  class=\"w-20 h-2 bg-white/20 rounded-full overflow-hidden\">\n            <div class=\"h-full
+  bg-gradient-to-r from-blue-300 to-orange-300 rounded-full\" style=\"width: 86%\"></div>\n
+  \         </div>\n          <span class=\"font-semibold w-8 text-right\">300°</span>\n
+  \       </div>\n      </div>\n  </div>\n</div>\n</template></turbo-stream>"

@@ -1,0 +1,12 @@
+<% today = data[:daily].first
+high = today.dig(:temp, :max)
+low = today.dig(:temp, :min)
+current = data[:current].merge(high: high, low: low)
+
+city = params[:address].presence || Current.location[:city] %>
+
+<%= render(Address::Autocomplete.new(city: city)) %>
+<div id="flash"></div>
+<%= render Weather::CurrentCard.new(forecast: current) %>
+<%= render Weather::OutlookCard.new(forecast: data[:hourly]) %>
+<%= render Weather::PredictionCard.new(forecast: data[:daily]) %>

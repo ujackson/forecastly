@@ -43,6 +43,8 @@ gem "thruster", require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
+  gem "dotenv"
+
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
 
@@ -54,6 +56,8 @@ group :development, :test do
 end
 
 group :development do
+  gem "annotaterb"
+
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 end
@@ -62,6 +66,21 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem "webmock"
+  gem "minitest-snapshots"
+  gem "mocha"
 end
 
 gem "mutex_m", "~> 0.3.0"
+
+gem "view_component", "~> 4.0"
+
+gem "requestjs-rails", "~> 0.0.13"
+
+gem "active_interaction", "~> 5.5"
+
+gem "http", "~> 5.3"
+
+gem "geocoder", "~> 1.8"
+
+gem "ziptz", "~> 5.1"

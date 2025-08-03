@@ -1,0 +1,15 @@
+<div class="rounded-md <%= type_classes[:bg] %> p-4" data-controller="components--ui--flash">
+  <div class="flex">
+    <div class="ml-3">
+      <p class="text-sm font-medium <%= type_classes[:text] %>"><%= @message %></p>
+    </div>
+    <div class="ml-auto pl-3">
+      <div class="-mx-1.5 -my-1.5">
+        <button type="button" data-action="components--ui--flash#dismiss" class="inline-flex rounded-md <%= type_classes[:bg] %> p-1.5 <%= type_classes[:button] %> focus:outline-0 focus:ring-0 focus:ring-offset-0 cursor-pointer">
+          <span class="sr-only">Dismiss</span>
+          <span>x</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
