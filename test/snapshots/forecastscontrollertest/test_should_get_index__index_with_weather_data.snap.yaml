@@ -30,7 +30,7 @@
   rel=\"modulepreload\" href=\"/assets/controllers/components/ui/flash_controller-5c4ff9d2.js\">\n<link
   rel=\"modulepreload\" href=\"/assets/controllers/components/ui/spinner_controller-9cbfb5fd.js\">\n<link
   rel=\"modulepreload\" href=\"/assets/controllers/index-ee64e1f1.js\">\n<script type=\"module\">import
-  \"application\"</script>\n      <script async defer src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyB6rgllpZZ24rpEjB6l1tK4_uk8ZZVKAoU&amp;libraries=places&amp;loading=async\"></script>\n\n
+  \"application\"</script>\n      <script async defer src=\"https://maps.googleapis.com/maps/api/js?key=&amp;libraries=places&amp;loading=async\"></script>\n\n
   \ </head>\n  <body>\n    <main\n      class=\"\n        min-h-screen bg-gradient-to-br
   from-blue-400 via-blue-500 to-blue-600 p-4\n      \"\n    >\n      <div data-controller=\"components--ui--spinner\">\n
   \ <div id=\"overlay\" data-components--ui--spinner-target=\"overlay\"></div>\n  <div
