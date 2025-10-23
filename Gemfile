@@ -73,7 +73,7 @@ end
 
 gem "mutex_m", "~> 0.3.0"
 
-gem "view_component", "~> 4.0"
+gem "view_component", "~> 4.1"
 
 gem "requestjs-rails", "~> 0.0.13"
 
